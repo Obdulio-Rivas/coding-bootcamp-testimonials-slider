@@ -1,0 +1,221 @@
+/*
+------------------------------
+Challenge by Frontend Mentor.
+Coded by Jose Obdulio Rivas Velasquez.
+------------------------------
+*/
+
+/*style reset*/
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/*web colors*/
+:root{
+    --Dark-Blue: hsl(240, 38%, 20%);
+    --Grayish-Blue: hsl(240, 18%, 77%);
+}
+
+/*General*/
+.container{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding: 3em 0px;
+    width: 100%;
+}
+
+.container__element{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+/*auxiliary classes*/
+.profile{
+    justify-content: center;
+    align-items: center;
+}
+
+.information{
+    margin-top: 70px;
+}
+
+.curve img{
+    display: block;
+    position: absolute;
+    bottom: 0px;
+}
+
+.attribution{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+}
+
+/*general classes*/
+/*information block*/
+.information__paragraph{
+    z-index: 2;
+    max-width: 650px;
+    display: block;
+    position: absolute;
+    font-size: 32px;
+    margin-top: 1.6em;
+    font-weight: 300;
+    text-align: left;
+    color: var(--Dark-Blue);
+}
+
+.information__text{
+    margin-bottom: 0.7em;
+}
+
+.information__user, .information__profession{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.information__profession{
+    color: var(--Grayish-Blue);
+}
+
+.information__img-quotes{
+    max-width: 100px;
+    margin-left: 6em;
+}
+
+/*profile block (image)*/
+.profile__img-bg{
+    display: block;
+    position: absolute;
+    max-width: 500px;
+    z-index: -1;
+}
+
+.profile__img{
+    max-width: 390px;
+    max-height: 390px;
+    margin: 2em auto 0px;
+    z-index: 1;
+    border-radius: 5px;
+    box-shadow: 0px 20px 50px -25px #999999;
+}
+
+/*profile controls*/
+.profile__controls{
+    display: flex;
+    flex-direction: row;
+    align-self: start;
+    align-content: center;
+    margin-left: 3em;
+    margin-top: -1.5em;
+    z-index: 4;
+}
+
+.profile__controls a{
+    display: flex;
+    justify-content: center;
+    padding: 0.7em 0px 0.6em;
+    width: 40px;
+    background: #ffffff;
+    animation: linear showElement 1s normal;
+}
+
+.profile__controls a:active{
+    outline: none;
+    transform: scale(0.95);
+    background: var(--Grayish-Blue);
+}
+
+.control-previous{
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.control-next{
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+/*Animation actions*/
+@keyframes showElement{
+    0%{
+        opacity: 0;
+        transform: scale(1.2);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/*responsive design for mobile screen
+ width 500px or less*/
+@media screen and (max-width: 500px){
+    /*General*/
+    .container{
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 2.5em 0px 0px 0px;
+    }
+
+    /*auxiliary classes*/
+    .information{
+        padding: 0px 2.5em;
+        max-width: 100%;
+        margin: 1em auto 0px;
+    }
+
+    .curve img{
+        width: 80%;
+    }
+
+    /*profile classes*/
+    .profile__img{
+        max-width: 300px;
+    }
+
+    .profile__img-bg{
+        max-width: 400px;
+        width: 100%;
+    }
+
+    .profile__controls{
+        align-self: center;
+        margin: auto;
+        margin-top: -2em;
+    }
+
+    .profile__controls a{
+        padding: 1.2em 0px;
+        width: 60px;
+    }
+
+    /*information classes*/
+    .information__img-quotes{
+        display: block;
+        margin: auto;
+    }
+
+    .information__paragraph{
+        display: block;
+        position: relative;
+        font-size: 1.2em;
+        margin: -1.6em 0px;
+        text-align: center;
+    }
+
+    .information__user, .information__profession{
+        font-size: 0.8em;
+        display: block;
+    }
+
+    .attribution{
+        display: none;
+    }
+}
